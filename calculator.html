@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnapSack Calculator</title>
+  <link rel="stylesheet" type="text/css" href="cstyle.css">
+</head>
+
+<body>
+  <div>
+    <div class="centered">
+      <div class="container">
+        <h2>KnapSack Calculator</h2>
+        <div class="input-section">
+         
+          <label for="values">Profits (comma-separated):</label>
+          <input class="input" type="text" id="values" placeholder="60,100,120" value="60,100,120"><br>
+          <label for="weights">Weights (comma-separated):</label>
+          <input class="input" type="text" id="weights" placeholder="10,20,30" value="10,20,30"><br>
+          <label for="capacity">Capacity of Sack:</label>
+          <input class="input" type="number" id="capacity" placeholder="50" value="50"><br>
+          <button id="calculate">Calculate</button>
+        </div>
+        <p id="result"><b></b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="split right">
+    <div class="a">
+      <h2><b>Let's solve the problem with the calculator</b></h2>
+      <p id="itemCount"><b><i>Number of items: 0</i></b></p>
+      <table id="resultTable">
+        <thead>
+          <tr>
+            <th>Profits</th>
+            <th>Weights</th>
+            <th>P-W Ratio</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+      <p id="ratioContainer"></p>
+      <table id="detailedTable">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Profit Taken</th>
+            <th>Remaining Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+   
+  </div>
+
+  <div class="sack-container" >
+    <div class="sack"></div>
+    <img src="ss.jpg" >
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

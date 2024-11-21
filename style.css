@@ -1,0 +1,304 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color:white; 
+    color: black; 
+    line-height: 1.6;
+}
+
+
+.title-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
+    padding-bottom: 5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    padding-bottom: 5px;
+    box-shadow: 0px 3px 4px rgb(139, 139, 172); 
+    background-color: white; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 30px; 
+    position: relative; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black; 
+    font-size: 18px;
+    padding: 8px 16px;
+    position: relative; 
+    z-index: 1; 
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; 
+    left: 0;
+    width: 0; 
+    height: 3px; 
+    background-color: blue;
+    transition: width 0.6s ease; 
+    z-index: -1;
+}
+
+.nav-links a:hover::after {
+    width: 100%; 
+}
+
+
+.nav-links a:hover {
+    color:black; 
+}
+
+
+.info-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 6px 15px rgb(62, 62, 145); 
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-header h2 {
+    color: black;
+    flex: 1;
+}
+
+.info-image {
+    width: 250px;
+    height: auto;
+    border: 2px solid blue;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+.info-container p {
+    margin-bottom: 10px;
+}
+
+.info-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+    color: black;
+}
+
+
+.faq-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.faq-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0px 6px 15px rgb(62, 62, 145);
+}
+
+.faq-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item details {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgb(98, 98, 175);
+}
+
+.faq-item details summary {
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+hr.divider {
+    border: 0;
+    border-top: 2px solid blue;
+    margin: 40px 0;
+    width: 100%;
+}
+
+
+footer {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+
+@media (max-width: 1024px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .info-image {
+        width: 200px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .info-container {
+        padding: 10px;
+    }
+
+    .faq-container {
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .info-section {
+        padding: 20px;
+    }
+
+    .info-container {
+        padding: 10px;
+    }
+
+    .info-image {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .faq-container {
+        padding: 10px;
+    }
+
+    .faq-item details {
+        padding: 8px;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .title-section h1 {
+        font-size: 28px;
+    }
+
+    .info-header h2 {
+        font-size: 18px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .info-image {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .faq-item details {
+        padding: 6px;
+    }
+}
+.info-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+
+.more-text {
+    display: none;
+    color:black;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.read-more
+{
+    cursor: pointer;
+    margin-top: 20px;
+    color: blue;
+}

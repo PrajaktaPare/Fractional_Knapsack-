@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knapsack Problem in Different Languages</title>
+    
+    <style>
+       
+        body {
+            background-color: white;
+            color: black; 
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 255, 0.6); 
+            border: 2px solid blue; 
+        }
+
+    
+        .title-section {
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: black; 
+            text-decoration: underline;
+            text-decoration-color: blue; 
+            text-decoration-thickness: 3px;
+            text-underline-offset: 6px;
+        }
+
+      
+        .language-select {
+            text-align: left; 
+            margin-bottom: 20px;
+            color: black; 
+            padding-left: 50px; 
+        }
+
+        .language-select button {
+            background-color: white;
+            color: black; 
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px; 
+            margin-bottom: 10px; 
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .language-select button:hover {
+            color: black;
+        }
+
+        .language-select button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: blue; 
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .language-select button:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        
+        .code-container {
+            display: none;
+            background-color: white; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); 
+        }
+
+        
+        .code-box {
+            background-color: white;
+            color: black; 
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+            }
+        }
+
+       
+        pre {
+            background-color: black; 
+            color: white; 
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .language-c, .language-javascript, .language-cpp {
+            background-color: black; 
+        }
+
+      
+        .copy-btn {
+            background-color: white; 
+            color: black; 
+            border: 1px solid blue; 
+            box-shadow: 1px;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 800px;
+        }
+
+        .copy-btn:hover {
+            background-color: blue; 
+            color: white; 
+        }
+
+      
+        .copy-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .copy-btn:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+    </style>
+</head>
+<body>
+
+   
+    <div class="container">
+        
+        <section class="title-section">
+            <h1>Knapsack Problem Implementations</h1>
+        </section>
+
+       
+        <section class="language-select">
+            <button onclick="showCode('c')">C</button>
+            <button onclick="showCode('js')">JavaScript</button>
+            <button onclick="showCode('cpp')">C++</button>
+        </section>
+
+        
+        <div id="c" class="code-container">
+            <div class="code-box">
+                <h2>C Code <button class="copy-btn" onclick="copyCode('c-code')">Copy Code</button></h2>
+                <pre><code id="c-code" class="language-c">
+#include <stdio.h>
+
+int knapsack(int weights[], int values[], int capacity, int n) {
+    int dp[n+1][capacity+1];
+
+    for (int i = 0; i <= n; i++) {
+        for (int w = 0; w <= capacity; w++) {
+            if (i == 0 || w == 0)
+                dp[i][w] = 0;
+            else if (weights[i-1] <= w)
+                dp[i][w] = (values[i-1] + dp[i-1][w - weights[i-1]] > dp[i-1][w]) ? 
+                            (values[i-1] + dp[i-1][w - weights[i-1]]) : dp[i-1][w];
+            else
+                dp[i][w] = dp[i-1][w];
+        }
+    }
+
+    return dp[n][capacity];
+}
+
+int main() {
+    int weights[] = {1, 2, 3, 8, 7, 4};
+    int values[] = {20, 5, 10, 40, 15, 25};
+    int capacity = 10;
+    int n = sizeof(weights)/sizeof(weights[0]);
+
+    printf("Maximum value in Knapsack = %d\n", knapsack(weights, values, capacity, n));
+    return 0;
+}
+                </code></pre>
+            </div>
+        </div>
+
+        <div id="js" class="code-container">
+            <div class="code-box">
+                <h2>JavaScript Code <button class="copy-btn" onclick="copyCode('js-code')">Copy Code</button></h2>
+                <pre><code id="js-code" class="language-javascript">
+function knapsack(weights, values, capacity) {
+    let n = weights.length;
+    let dp = Array(n+1).fill().map(() => Array(capacity+1).fill(0));
+
+    for (let i = 0; i <= n; i++) {
+        for (let w = 0; w <= capacity; w++) {
+            if (i == 0 || w == 0) {
+                dp[i][w] = 0;
+            } else if (weights[i-1] <= w) {
+                dp[i][w] = Math.max(values[i-1] + dp[i-1][w - weights[i-1]], dp[i-1][w]);
+            } else {
+                dp[i][w] = dp[i-1][w];
+            }
+        }
+    }
+
+    return dp[n][capacity];
+}
+
+let weights = [1, 2, 3, 8, 7, 4];
+let values = [20, 5, 10, 40, 15, 25];
+let capacity = 10;
+console.log(knapsack(weights, values, capacity));
+                </code></pre>
+            </div>
+        </div>
+
+        <div id="cpp" class="code-container">
+            <div class="code-box">
+                <h2>C++ Code <button class="copy-btn" onclick="copyCode('cpp-code')">Copy Code</button></h2>
+                <pre><code id="cpp-code" class="language-cpp">
+#include <iostream>
+using namespace std;
+
+int knapsack(int weights[], int values[], int capacity, int n) {
+    int dp[n+1][capacity+1];
+
+    for (int i = 0; i <= n; i++) {
+        for (int w = 0; w <= capacity; w++) {
+            if (i == 0 || w == 0)
+                dp[i][w] = 0;
+            else if (weights[i-1] <= w)
+                dp[i][w] = max(values[i-1] + dp[i-1][w - weights[i-1]], dp[i-1][w]);
+            else
+                dp[i][w] = dp[i-1][w];
+        }
+    }
+
+    return dp[n][capacity];
+}
+
+int main() {
+    int weights[] = {1, 2, 3, 8, 7, 4};
+    int values[] = {20, 5, 10, 40, 15, 25};
+    int capacity = 10;
+    int n = sizeof(weights)/sizeof(weights[0]);
+
+    cout << "Maximum value in Knapsack = " << knapsack(weights, values, capacity, n) << endl;
+    return 0;
+}
+                </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        function showCode(language) {
+            const containers = document.querySelectorAll('.code-container');
+            containers.forEach(function(container) {
+                container.style.display = 'none';
+            });
+            document.getElementById(language).style.display = 'block';
+        }
+
+ 
+        window.onload = function() {
+            showCode('c');
+        };
+
+      
+        function copyCode(id) {
+            var codeElement = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(codeElement).then(function() {
+                alert('Code copied to clipboard!');
+            }).catch(function(err) {
+                alert('Failed to copy code: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
