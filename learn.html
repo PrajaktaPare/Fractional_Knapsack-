@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractional Knapsack Problem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        .title-section {
+            text-align: center;
+            color: azure;
+            background-color: rgb(18, 8, 72);
+            padding: 5px 0;
+        }
+
+        .title-section h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+           
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0px 3px 4px rgb(139, 139, 172);
+            background-color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 8px 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: blue;
+            transition: width 0.6s ease;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .intro {
+            flex: 1;
+            margin-right: 20px;
+            margin-left: 10px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+
+        }
+        .intro li,ol
+        {
+            margin-left: 13px;
+            font-size: 16px;
+            color: #293137;
+        }
+        .intro p
+        {
+            font-size: 18px;
+            color: #293137;
+        }
+        .intro h3
+        {
+          
+            margin-top: 7px;
+            font-size: 19px;
+            text-decoration: underline;
+        }
+        .video-container {
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+            flex: 1.2;
+            padding: 20px;
+            margin-left: 5px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 320px;
+        }
+
+        .example-application
+        {
+            display: flex;
+            direction: row;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-bottom: 10px;
+
+        }
+        .knapsack-example {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+            padding: 10px;
+            max-width: 500px;
+            margin: auto;
+        }
+        .knapsack-example h3 {
+            color: #333;
+        }
+        .knapsack-example ul {
+            list-style-type: disc;
+            margin-left: 20px;
+}
+        .knapsack-example ol {
+            margin-left: 20px;
+        }
+        .knapsack-example li {
+            margin-bottom: 10px;
+        }
+        .knapsack-example strong {
+            color: #0084ff;
+        }
+        
+        .applications {
+            margin-left: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+        }
+        
+        h3 {
+            text-align: center;
+            color: #333;
+            font-size: 1em;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+        
+        .application {
+            
+            margin-bottom: 5px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .application h3 {
+            color: #007BFF;
+            font-size: .3 em;
+            margin-bottom: 20px;
+        }
+        
+        .application p {
+            color: #555;
+            line-height: 1.6;
+        }  
+
+        .youtube-videos1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .video-container1 {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .video-container1 iframe {
+            flex: 1;
+            margin: 10px;
+            max-width: 100%;
+            height: auto;
+            min-width: 260px;
+        }
+        .youtube-videos1 h2{
+            color: rgb(53, 30, 30);
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration:underline;
+        }
+        
+        footer {
+            background-color: rgb(18, 8, 72);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        footer .footer-links li {
+            margin: 0 15px;
+        }
+
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+        
+            .nav-links {
+                flex-direction: column;
+            }
+        
+            .nav-links li {
+                margin: 10px 0;
+            }
+        
+        
+            .flex-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .intro, .video-container {
+                margin: 10px 0;
+                width: 90%;
+            }
+        
+            .video-container iframe {
+                height: 200px;
+            }
+        
+            h3 {
+                font-size: 1.2em; 
+            }
+             
+                .example-application {
+                    flex-direction: column;
+                    align-items: center; 
+                }
+            
+                .knapsack-example {
+                    width: 90%; 
+                    margin: 10px auto;
+                margin-top: -15px; }
+            
+                .application {
+                    width: 90%; 
+                    margin: 10px auto; 
+                    
+                }
+            
+                .application h3 {
+                    font-size: 1.2em; 
+                }
+            
+                .application p {
+font-size: 0.9em; 
+                }
+            
+            .application h3 {
+                font-size: 1.2em;
+            }
+        
+            .youtube-videos1 h2 {
+                font-size: 1.5em; 
+            }
+            .faq-container h3 {
+                font-size: 20px;
+            }
+            footer .footer-links {
+                flex-direction: column; 
+            }
+        
+            footer .footer-links li {
+                margin: 5px 0; 
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="continer">
+
+    </div>
+    <section class="title-section" id="home">
+        <h1>Fractional Knapsack Problem</h1>
+    </section>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html"><b>Home</b></a></li>
+            <li><a href="calculator.html"><b>Calculator</b></a></li>
+            <li><a href="#learn"><b>Learn</b></a></li>
+            <li><a href="code.html"><b>Code</b></a></li>
+        </ul>
+    </nav>
+    <div class="main-container">
+        <div class="flex-container">
+            <div class="intro">
+                <h2>Fractional Knapsack Problem.</h2>
+                <p>The Fractional Knapsack Problem is a problem in combinatorial optimization where you can take fractions of items to maximize the total value in a knapsack of limited capacity.</p>
+                <h3>Steps to Solve the Fractional Knapsack Problem</h3>
+                <ol>
+                    <li>Input the Items</li>
+                    <li>Calculate Value-to-Weight Ratios</li>
+                    <li>Sort Items by Value-to-Weight Ratio</li>
+                    <li>Initialize Variables</li>
+                    <li>Select Items</li>
+                    <li>Output the Result</li>
+                </ol>
+            </div>
+    
+            <div class="video-container">
+                <h2>Watch and Learn</h2>
+                <iframe src="videolearn.mp4"
+                        width="100%" 
+                        height="100%" 
+                        frameborder="1" 
+                        allowfullscreen
+                        sandbox
+                        >
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="example-application">
+
+    <div class="knapsack-example">
+        <h3 style="color:rgb(255, 6, 60);text-transform:uppercase; font-weight:bolder; text-decoration:underline">Example</h3>
+        <p>Consider items with the following values and weights:</p>
+        <ul>
+            <li>Item A: Value = 80, Weight = 15</li>
+            <li>Item B: Value = 120, Weight = 30</li>
+            <li>Item C: Value = 60, Weight = 10</li>
+        </ul>
+        <p>With a knapsack capacity of 40, the optimal solution would involve taking:</p>
+       <h4>Step-by-Step Breakdown</h4>
+        <ol>
+            <li><strong>Input the Items:</strong> 
+                <ul>
+                    <li>Item A: Value = 80, Weight = 15</li>
+                    <li>Item B: Value = 120, Weight = 30</li>
+                    <li>Item C: Value = 60, Weight = 10</li>
+                </ul>
+            </li>
+            <li><strong>Calculate Value-to-Weight Ratios:</strong>
+                <ul>
+                    <li>Item A: 80 / 15 = 5.33</li>
+                    <li>Item B: 120 / 30 = 4.00</li>
+                    <li>Item C: 60 / 10 = 6.00</li>
+                </ul>
+            </li>
+            <li><strong>Sort Items by Value-to-Weight Ratio:</strong>
+                <ul>
+                    <li>Item C: 6.00</li>
+                    <li>Item A: 5.33</li>
+                    <li>Item B: 4.00</li>
+                </ul>
+            </li>
+            <li><strong>Initialize Variables:</strong> Set total value to 0 and remaining capacity to 40.</li>
+            <li><strong>Select Items:</strong>
+                <ul>
+                    <li>Take Item C: Full (Weight = 10, Value = 60)</li>
+<li>Take Item A: Full (Weight = 15, Value = 80)</li>
+                    <li>Take Item B: Quarter (Weight = 10, Value = 40)</li>
+                </ul>
+            </li>
+            <li><strong>Output the Result:</strong> Total Value = 60 + 80 + 40 = 180</li>
+        </ol>
+    </div>
+
+    <div class="applications">
+        <h3 style="color:rgb(255, 6, 60);text-transform:uppercase; font-weight:bolder; text-decoration:underline">Real-World Applications</h3>
+        <div class="application">
+            <h3>Finance</h3>
+            <p>Used in portfolio optimization to maximize returns. This involves selecting the best combination of assets to achieve the highest possible return for a given level of risk.</p>
+        </div>
+        <div class="application">
+            <h3>Logistics</h3>
+            <p>Helps in optimizing cargo loading in transportation. Efficient loading strategies reduce costs and improve delivery times by maximizing space utilization.</p>
+        </div>
+       
+        <div class="application">
+            <h3>Manufacturing</h3>
+            <p>Optimizes the selection of materials to maximize production efficiency. This involves choosing the best materials and processes to reduce waste and increase output.</p>
+        </div>
+        <div class="application">
+            <h3>Telecommunications</h3>
+            <p>Used in bandwidth allocation to maximize data transmission efficiency. Proper allocation ensures that network resources are utilized effectively, improving service quality.</p>
+        </div>
+        <div class="application">
+            <h3>Healthcare</h3>
+            <p>Assists in optimizing the allocation of medical resources and treatments to maximize patient outcomes. This involves prioritizing care based on patient needs and resource availability.</p>
+        </div>
+       
+    </div>
+
+    </div>
+
+    <div class="youtube-videos1">
+        <h2 style="color:rgb(255, 6, 60);text-transform:uppercase; font-weight:bolder; text-decoration:underline">More Videos on Fractional Knapsack</h2>
+        <div class="video-container1">
+            <iframe width=""560 height="315" 
+            src="https://www.youtube.com/embed/m1p-eWxrt6g?autoplay=0&mute=1">
+            </iframe>
+
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/oTTzNMHM05I?autoplay=0&mute=1">
+            </iframe>
+
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/kFUs5VUxO-s?autoplay=0&mute=1">  
+            </iframe>
+           
+            
+            
+        </div>
+    </div>
+
+   
+    
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="code.html">Code</a></li>
+        </ul>
+        <p>&copy; 2024 Fractional Knapsack Problem. All rights reserved.</p>
+    </footer>
+
+    </body>
+    </html>

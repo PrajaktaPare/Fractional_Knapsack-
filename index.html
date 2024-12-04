@@ -6,13 +6,332 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fractional Knapsack Problem</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
 
+        body {
+            background-color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        .title-section {
+            text-align: center;
+            color: azure;
+            background-color: rgb(18, 8, 72);
+            padding: 5px 0;
+        }
+
+        .title-section h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+           
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0px 3px 4px rgb(139, 139, 172);
+            background-color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 8px 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: blue;
+            transition: width 0.6s ease;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero-section {
+            margin:3px 10px 3px 10px;
+            margin-top: 7px;
+            text-align: center;
+            padding: 50px 20px;
+            background: white;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+            border-radius: 5px;
+            
+        }
+
+        .hero-section h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: blue;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.2s, color 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: rgb(4, 173, 13);
+            color: beige;
+            transform: translateY(-3px);
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 10px;
+
+        }
+
+        .info-container {
+            width: 60%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+        }
+        .info-container h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #020202;
+            margin-bottom: 10px;
+        }
+        
+        .info-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #383636;
+        }
+     
+        .visuals {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .visuals img {
+
+            width: 100%;
+            max-width: 400px;
+            margin: 1px 0;
+            border-radius: 8px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+        }
+.faq-section {
+            padding: 40px 20px;
+            background-color: rgb(240, 240, 240);
+        }
+        
+        .faq-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
+            max-width: 1800px;
+            margin-top: none;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        
+        details {
+            border: 1px solid rgb(200, 200, 200);
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+            outline: none;
+        }
+        
+        summary:hover {
+            background-color: rgb(230, 230, 230);
+        }
+        
+        details[open] {
+            background-color: rgb(245, 245, 245);
+        }
+        
+        .faq-container h3
+        {
+            
+            margin-bottom: 5px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: rgb(18, 8, 72);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        footer .footer-links li {
+            margin: 0 15px;
+        }
+
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+      
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-container {
+        width: 95%;
+    }
+
+    .visuals {
+        width: 95%;
+    }
+
+    .faq-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-section h2 {
+        font-size: 24px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .info-container h2 {
+        font-size: 24px;
+    }
+
+    .info-container p {
+        font-size: 14px;
+    }
+    .visuals {
+        width: 95%; 
+    }
+
+    .visuals img {
+        margin-top: 10px;
+        max-width: 100%; 
+    }
+
+    .faq-container h3 {
+        font-size: 20px;
+    }
+    footer .footer-links {
+        flex-direction: column; 
+    }
+
+    footer .footer-links li {
+        margin: 5px 0; 
+    }
+}
+    </style>
 </head>
 
 <body>
+    <div class="continer">
 
-
+    </div>
     <section class="title-section" id="home">
         <h1>Fractional Knapsack Problem</h1>
     </section>
@@ -21,87 +340,84 @@
         <ul class="nav-links">
             <li><a href="#home"><b>Home</b></a></li>
             <li><a href="calculator.html"><b>Calculator</b></a></li>
+            <li><a href="learn.html"><b>Learn</b></a></li>
             <li><a href="code.html"><b>Code</b></a></li>
         </ul>
     </nav>
-    <section class="info-section">
+
+   
+
+    <section class="hero-section">
+        <h2>Solve optimization Problem with Precision and Ease!</h2>
+        <p>"Effortlessly solve knapsack problems with user friendly interactive learning and a simple calculator!"</p>
+        <button class="cta-button" onclick="window.location.href='calculator.html'">Use Calculator</button>
+        <button class="cta-button" onclick="window.location.href='learn.html'">Start Learning</button>
+    </section>
+<section class="info-section">
         <div class="info-container">
-            <div class="info-header">
-                <h2>What is a Greedy Algorithm?</h2>
-            </div>
-            <p>A greedy algorithm is a type of optimization algorithm that makes locally optimal choices at each step to
-                find a globally optimal solution. It operates on the principle of “taking the best option now” without
-                considering the long-term consequences.</p><br>
-
-            <div class="info-header">
-                <h2>Knapsack Problem Explanation</h2>
-            </div>
-            <div class="algorithm-info">
-                <img src="ksp.png" class="info-image" alt="Knapsack Problem">
-            </div>
-
-
-            <p id="initial-text">The Fractional Knapsack Problem is a variation of the classic Knapsack Problem, where
-                the items are divisible. This means that you can take fractions of an item rather than having to take
-                the whole item. In this problem, you aim to maximize the total value of the items placed in the knapsack
-                while respecting the capacity of the knapsack. The solution is obtained by picking the items with the
-                highest value-to-weight ratio first.</p>
-            <div id="more-text" class="more-text">
-                <p>This problem can be solved using a greedy algorithm where we first calculate the value per unit
-                    weight of each item and then sort the items in decreasing order of their value-to-weight ratio. We
-                    start by adding the items with the highest ratio to the knapsack until the knapsack is full. If an
-                    item can't be added completely because the capacity is reached, we take as much of it as we can (a
-                    fraction of it). The goal is to maximize the total value of the items in the knapsack.</p>
-            </div>
-            <span id="read-more" class="read-more">Read More...</span>
+            <h2>Overview of the Fractional Knapsack Problem</h2>
+            <p>The fractional knapsack problem is a well-known optimization problem where the goal is to maximize the total value of items you can carry in a knapsack with a weight limit. Unlike the 0/1 knapsack problem, you can take parts of an item, making it more flexible for real-world situations. This method helps you make better choices by considering the value of items relative to their weight. Additionally, the greedy algorithm used to solve this problem makes finding the best solution quick and efficient. It is commonly used in scenarios like budgeting, resource allocation, and investment strategies, where maximizing returns is crucial.</p>
+        </div>
+        <div class="visuals">
+            <img src="ksp.png" alt="Value-to-Weight Ratio Chart">
         </div>
     </section>
-
-
-    <hr class="divider">
 
     <section class="faq-section">
         <div class="faq-container">
             <h3>Frequently Asked Questions</h3>
+            
             <div class="faq-item">
                 <details>
-                    <summary>What is the Fractional Knapsack Problem?</summary>
-                    <p>The Fractional Knapsack Problem is a problem where you can take fractions of items to maximize
-                        the total value...</p>
+                    <summary>How does the fractional knapsack problem differ from the 0/1 knapsack problem?</summary>
+                    <p>The main difference is that in the fractional knapsack problem, you can take fractions of an item, while in the 0/1 knapsack problem, you must take the whole item or leave it.</p>
                 </details>
             </div>
             <div class="faq-item">
                 <details>
-                    <summary>How is this problem solved?</summary>
-                    <p>This problem is solved using the greedy approach. You pick the items with the highest
-                        value-to-weight ratio...</p>
+                    <summary>What is the significance of the value-to-weight ratio in this problem?</summary>
+                    <p>The value-to-weight ratio helps determine which items to include in the knapsack to maximize value without exceeding the weight limit.</p>
                 </details>
             </div>
             <div class="faq-item">
                 <details>
-                    <summary>Where can we use the Knapsack Problem in real life?</summary>
+                    <summary>Why is the fractional knapsack problem solved using a greedy algorithm?</summary>
+                    <p>The greedy algorithm is used because it allows for an efficient solution by always picking the item with the highest value-to-weight ratio first.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>What are some real-world applications of the fractional knapsack problem?</summary>
                     <p>The Knapsack Problem has several real-life applications, including:</p>
                     <ul>
-                        <li><strong>Resource Allocation:</strong> Optimizing the allocation of limited resources (such
-                            as bandwidth, CPU time, or memory) to achieve the maximum benefit.</li>
-                        <li><strong>Investment Planning:</strong> Selecting the best combination of investment options
-                            to maximize returns without exceeding a budget or risk limit.</li>
-                        <li><strong>Load Planning:</strong> In logistics, packing items into containers or vehicles
-                            while optimizing the total value of the items that can be transported.</li>
-                        <li><strong>Knapsack in Cryptography:</strong> Solving certain types of cryptographic problems
-                            related to protecting information through optimization techniques.</li>
-                        <li><strong>Knapsack in Economics:</strong> Used in budgeting and cost management to optimize
-                            the use of financial resources across various investments or projects.</li>
+                        <li><strong>Resource Allocation:</strong> Optimizing the allocation of limited resources (such as bandwidth, CPU time, or memory) to achieve the maximum benefit.</li>
+                        <li><strong>Investment Planning:</strong> Selecting the best combination of investment options to maximize returns without exceeding a budget or risk limit.</li>
+                        <li><strong>Load Planning:</strong> In logistics, packing items into containers or vehicles while optimizing the                        <li><strong>Load Planning:</strong> In logistics, packing items into containers or vehicles while optimizing the total value of the items that can be transported.</li>
+                        <li><strong>Knapsack in Cryptography:</strong> Solving certain types of cryptographic problems related to protecting information through optimization techniques.</li>
+                        <li><strong>Knapsack in Economics:</strong> Used in budgeting and cost management to optimize the use of financial resources across various investments or projects.</li>
                     </ul>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>What is the time complexity of solving the fractional knapsack problem?</summary>
+<p>The time complexity is O(n log n) due to the sorting step required to arrange items based on their value-to-weight ratio before selecting them for the knapsack.</p>
                 </details>
             </div>
         </div>
     </section>
 
-
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="code.html">Code</a></li>
+        </ul>
+        <p>&copy; 2024 Fractional Knapsack Problem. All rights reserved.</p>
+    </footer>
 
     <script>
-        
         document.getElementById("read-more").addEventListener("click", function () {
             var moreText = document.getElementById("more-text");
             var initialText = document.getElementById("initial-text");
@@ -115,7 +431,7 @@
             }
         });
     </script>
-
+ </div>
 </body>
 
 </html>
