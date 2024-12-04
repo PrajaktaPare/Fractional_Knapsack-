@@ -1,273 +1,187 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-}
-
+/* General styling */
 body {
-    background-color: #f8f8f8;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.title-section {
-    text-align: center;
-    color: azure;
-    background-color: rgb(18, 8, 72);
-    padding: 5px 0;
-}
-
-.title-section h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-   
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    box-shadow: 0px 3px 4px rgb(139, 139, 172);
-    background-color: white;
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  list-style: none;
+  padding: 0;
 }
 
 .nav-links li {
-    margin: 0 30px;
-    position: relative;
+  display: inline;
+  margin: 0 15px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    padding: 8px 16px;
-    position: relative;
-    z-index: 1;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: blue;
-    transition: width 0.6s ease;
-    z-index: -1;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-    
-}
-
-
-.split {
-    height: 100%;
-    position: absolute;
-    width: 65%;
-    margin-top: 20px;
-    z-index: 1;
-}
-.right {
-    right: 0;
-    background-color: white;
-}
 h1, h2 {
-    text-align: center;
-    color: black;
+  text-align: center;
+  margin-top: 20px;
 }
 
-h2 {
-    padding-left: 10px;
+/* Title Section */
+.title-section {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
 }
 
+/* Container */
 .centered {
-    margin-top: 140px;
-    position: absolute;
-    top: 35%;
-    left: 15%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    border: 2px solid blue;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-.a {
-    padding: 0%;
-    margin-top: 5%;
-    margin-left: 10px;
-    margin-right: 10px;
+.container {
+  width: 60%;
 }
 
-.input-section label {
-    display: block;
-    text-align: left;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    color: black;
-    font-style: italic;
+.input-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .input {
-    padding: 10px;
-    width: 90%;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-}
-
-input:focus {
-    border-color: rgb(11, 11, 197);
-    outline: none;
-    box-shadow: 0 0 5px rgb(70, 70, 141);
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: rgb(38, 38, 107);
-    color: white;
-    margin-left: 76px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: blue;
-    transform: scale(1.05);
+  background-color: #45a049;
 }
 
-
+/* Tables */
 table {
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
-    border: 1px solid black;
-    margin-right: 60px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-table th, table td {
-    border: 1px solid white;
-    box-shadow: 3px 3px 8px blue;
-    padding: 10px;
-    text-align: center;
+table, th, td {
+  border: 1px solid black;
 }
 
-table th {
-    background-color: blue;
-    color: white;
+th, td {
+  padding: 12px;
+  text-align: center;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: lightblue;
-}
-
-table tbody tr:nth-child(odd) {
-    background-color: white;
-}
-
-#ratioContainer {
-    font-weight: bold;
-    margin-top: 10px;
-    color: black;
-}
-
+/* Sack Container */
 .sack-container {
-    top: 400px;
-    position: relative; /* Container is the reference point for absolute positioning */
+  margin-top: 20px;
+  text-align: center;
 }
 
-.sack {
-    max-width: 15%;
-    display: flex;
-    flex-wrap: wrap;  /* Allow items to wrap to the next row */
-    position: absolute; /* Position the sack over the image */
-    top: 90px;  /* Align it to the top of the container */
-    left: 200px; /* Align it to the left of the container */
-    right: 0;  /* Optional: to ensure sack doesn't overflow horizontally */
-    z-index: 2;  /* Ensure it appears above the image */
-    gap: 10px;  /* Space between items */
+.sack-container img {
+  max-width: 100%;
+  height: auto;
 }
 
-.item {
-    width: 40px;
-    height: 40px;
-    background-color: blue;
-    border-radius: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-    border: 1px solid black;
-    animation: scale-up 1s ease-in-out forwards;
-    transition: width 0.3s ease; /* Transition effect when the width changes */
+/* Flexbox for split layout */
+.split {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
-img {
-    max-width: 60%;
-    height: 250px;
-    object-fit: fill; /* Make sure the image covers the container without stretching */
-    z-index: 1; /* Ensure the image is below the sack */
-    margin-top: 50px;
-    margin-left: 40px;
-    transition: all 0.3s ease; /* Smooth transition for resizing and shifting */
+.split .right {
+  width: 50%;
+  padding: 20px;
 }
 
-p {
-    padding-left: 40px;
-    font-weight: bold;
+.split .left {
+  width: 45%;
+  padding: 20px;
 }
 
-
-
-.item span {
-    z-index: 1; /* Ensure the number is always on top */
+.split .a {
+  padding: 20px;
 }
 
-.item[data-percentage="partial"] {
-    background-color: lightblue;  /* Light blue for partially filled items */
+/* Media Queries for responsiveness */
+
+/* For tablets and smaller devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  .split {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .split .right, .split .left {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
 }
 
-/* Table styles */
-table th {
-    background-color: blue;
-    color: white;
-}
+/* For mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .title-section h1 {
+    font-size: 24px;
+  }
 
-table tbody tr:nth-child(even) {
-    background-color: lightblue;
-}
+  .navbar {
+    font-size: 14px;
+  }
 
-table tbody tr:nth-child(odd) {
-    background-color: white;
-}
+  .navbar .nav-links li {
+    display: block;
+    margin: 5px 0;
+  }
 
+  .input-section label, .input-section input, .input-section button {
+    font-size: 14px;
+  }
 
-@keyframes scale-up {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  table {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .sack-container img {
+    max-width: 90%;
+  }
 }
