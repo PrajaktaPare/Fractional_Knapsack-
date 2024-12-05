@@ -31,6 +31,7 @@
             margin-bottom: 10px;
             color: rgb(255, 255, 255);
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+           
         }
 
         .navbar {
@@ -39,6 +40,7 @@
             padding: 10px 0;
             box-shadow: 0px 3px 4px rgb(139, 139, 172);
             background-color: white;
+          
         }
 
         .nav-links {
@@ -79,6 +81,7 @@
         }
 
         .header {
+        
             color: rgb(0, 0, 0);
             padding: 20px;
             text-align: center;
@@ -93,33 +96,37 @@
             font-size: .4 em;
             margin-top: 10px;
         }
-
         .language-select {
-            text-align: left;
+           
+            text-align: left; 
             margin-bottom: 20px;
-            color: black;
-            padding-left: 50px;
+            color: black; 
+            padding-left: 50px; 
             display: flex;
             justify-content: center;
+          
         }
 
         .language-select button {
-            background-color: white;
-            color: black;
+            
+            background-color: white; 
+            color: black; 
             padding: 10px 20px;
             border: 1px solid black;
             border-radius: 5px;
             cursor: pointer;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            margin-right: 10px; 
+            margin-bottom: 10px; 
             position: relative;
             transition: all 0.3s ease;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
         }
 
         .language-select button:hover {
-            color: black;
+            color: black; 
         }
 
+       
         .language-select button::after {
             content: '';
             position: absolute;
@@ -127,7 +134,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background-color: blue;
+            background-color: blue; 
             transform: scaleX(0);
             transform-origin: bottom right;
             transition: transform 0.4s ease-in-out;
@@ -140,24 +147,31 @@
 
         .code-container {
             display: none;
-            background-color: white;
+            background-color: white; 
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); 
         }
 
+       
         .code-box {
-            background-color: white;
-            color: black;
+            background-color: white; 
+            color: black; 
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+@media (max-width: 768px) {
+            .container {
+                margin: 20px;
+            }
+        }
 
+        
         pre {
-            background-color: black;
-            color: white;
+            background-color: black; 
+            color: white; 
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -166,28 +180,29 @@
             white-space: pre-wrap;
         }
 
-        .language-c,
-        .language-javascript,
-        .language-cpp,
-        .language-py {
-            background-color: black;
+        
+        .language-c, .language-javascript, .language-cpp,.language-py
+         {
+            background-color: black; 
         }
 
+       
         .copy-btn {
-            background-color: white;
-            color: black;
-            border: 1px solid blue;
+            background-color: white; 
+            color: black; 
+            border: 1px solid blue; 
             box-shadow: 1px;
             border-radius: 5px;
             padding: 8px 15px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin-left: 800px;
+            box-shadow: 2px 6px 15px rgb(62, 62, 145);
         }
 
         .copy-btn:hover {
-            background-color: blue;
-            color: white;
+            background-color: blue; 
+            color: white; 
         }
 
         .copy-btn::after {
@@ -196,7 +211,8 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            transform-origin: bottom right;
+            height: 3px;
+        transform-origin: bottom right;
             transition: transform 0.4s ease-in-out;
         }
 
@@ -204,6 +220,7 @@
             transform: scaleX(1);
             transform-origin: bottom left;
         }
+
 
         footer {
             background-color: rgb(18, 8, 72);
@@ -239,67 +256,67 @@
             .navbar {
                 flex-direction: column;
             }
-
+        
             .nav-links {
                 flex-direction: column;
             }
-
+        
             .nav-links li {
                 margin: 10px 0;
             }
-
             .title-section h1 {
-                font-size: 28px;
+                font-size: 28px; 
             }
-
+        
             .navbar {
-                flex-direction: column;
+                flex-direction: column; 
             }
-
+        
             .nav-links li {
-                margin: 10px 0;
+                margin: 10px 0; 
             }
-
+        
             .header h1 {
-                font-size: 1.2em;
+                font-size: 1.2em; 
             }
-
+        
             .header p {
                 font-size: 0.8em;
             }
-
+        
             .language-select {
-                flex-direction: column;
+                flex-direction: column; 
             }
-
+        
             .copy-btn {
-                width: 100%;
-                margin: 10px 0;
+                width: 100%; 
+                margin: 10px 0; 
             }
-
+        
             footer .footer-links {
-                flex-direction: column;
+                flex-direction: column; 
             }
-
+        
             footer .footer-links li {
-                margin: 5px 0;
+                margin: 5px 0; 
             }
         }
+
     </style>
-</head>
-
-<body>
-
+    </head>
+    <body>
+    </div>
     <section class="title-section" id="home">
         <h1>Fractional Knapsack Problem</h1>
     </section>
+    
 
     <nav class="navbar">
         <ul class="nav-links">
             <li><a href="index.html"><b>Home</b></a></li>
             <li><a href="calculator.html"><b>Calculator</b></a></li>
             <li><a href="learn.html"><b>Learn</b></a></li>
-            <li><a href="code.html"><b>Code</b></a></li>
+            <li><a href="#code"><b>Code</b></a></li>
         </ul>
     </nav>
 
@@ -307,8 +324,7 @@
         <h1>Code for Fractional Knapsack Problem</h1>
         <p>Explore solutions for the fractional knapsack problem across different programming languages and learn the implementation details.</p>
     </div>
-
-    <section class="language-select">
+<section class="language-select">
         <button onclick="showCode('c')">C</button>
         <button onclick="showCode('js')">JavaScript</button>
         <button onclick="showCode('cpp')">C++</button>
@@ -317,208 +333,273 @@
 
     <div id="c" class="code-container">
         <div class="code-box">
-            <h2>C Code
-                <button class="copy-btn" onclick="copyCode('c-code')">Copy Code</button>
-            </h2>
+            <h2>C Code 
+            <button class="copy-btn" onclick="copyCode('c-code')">Copy Code</button></h2>
             <pre><code id="c-code" class="language-c">
-#include <stdio.h>
-
-struct Item {
-    int value;
-    int weight;
-    float ratio;
-};
-
-int compare(const void *a, const void *b) {
-    struct Item *item1 = (struct Item*)a;
-    struct Item *item2 = (struct Item*)b;
-    return (item2->ratio > item1->ratio) - (item1->ratio > item2->ratio);
-}
-
-void fractionalKnapsack(int W, struct Item arr[], int n) {
-    qsort(arr, n, sizeof(arr[0]), compare);
-
-    float totalValue = 0.0;
-
-    for (int i = 0; i < n; i++) {
-        if (arr[i].weight <= W) {
-            W -= arr[i].weight;
-            totalValue += arr[i].value;
-        } else {
-            totalValue += arr[i].value * ((float)W / arr[i].weight);
-            break;
+//C Program to Implement Knapsack Problem using Greedy Method
+#include<stdio.h>
+int main()
+{
+    float weight[50],profit[50],ratio[50],Totalvalue,temp,capacity,amount;
+    int i,j,num;
+    printf("Enter number of items :");
+    scanf("%d",&num);   
+    for (i = 0; i < num; i++)
+    {
+        printf("\n\nEnter Weight and Profit for item[%d] :\n",i);
+        scanf("%f %f", &weight[i], &profit[i]);
+    } 
+    printf("\n\nEnter capacity of knapsack :\n");
+    scanf("%f",&capacity);
+     
+    for(i=0;i<num;i++)
+        ratio[i]=profit[i]/weight[i];
+         
+    for (i = 0; i < num; i++) 
+    {
+ for (j = i + 1; j < num; j++) 
+    {
+  if (ratio[i] < ratio[j]) 
+        {
+            temp = ratio[j];
+            ratio[j] = ratio[i];
+            ratio[i] = temp;
+ 
+            temp = weight[j];
+            weight[j] = weight[i];
+            weight[i] = temp;
+ 
+            temp = profit[j];
+            profit[j] = profit[i];
+            profit[i] = temp;
         }
-    }
-    printf("Maximum Value in Knapsack = %.2f\n", totalValue);
-}
-
-int main() {
-    struct Item arr[] = { {60, 10, 6}, {100, 20, 5}, {120, 30, 4} };
-    int W = 50;
-    int n = sizeof(arr) / sizeof(arr[0]);
+ }
+ }
     
-    for (int i = 0; i < n; i++) {
-        arr[i].ratio = (float) arr[i].value / arr[i].weight;
-    }
-    fractionalKnapsack(W, arr, n);
-    return 0;
-}</code></pre>
+     printf("\nKnapsack Problem using Greedy Method :\n");
+     for (i = 0; i < num; i++) 
+     {
+      if (weight[i] > capacity)
+          break;
+       else 
+      {
+          Totalvalue = Totalvalue + profit[i];
+                    capacity = capacity - weight[i];
+       }
+     } 
+       if (i < num)
+       Totalvalue = Totalvalue + (ratio[i]*capacity);
+     printf("\nThe maximum value is :%f\n",Totalvalue);     
+     return 0;
+}
+            </code></pre>
         </div>
     </div>
 
     <div id="js" class="code-container">
         <div class="code-box">
-            <h2>JavaScript Code
-                <button class="copy-btn" onclick="copyCode('js-code')">Copy Code</button>
-            </h2>
+            <h2>JavaScript Code <button class="copy-btn" onclick="copyCode('js-code')">Copy Code</button></h2>
             <pre><code id="js-code" class="language-javascript">
-// JavaScript implementation of Fractional Knapsack
-class Item {
-    constructor(value, weight) {
-        this.value = value;
-        this.weight = weight;
-        this.ratio = value / weight;
-    }
-}
+function knapsack(weights, values, capacity) {
+let n = weights.length;
+let dp = Array(n+1).fill().map(() => Array(capacity+1).fill(0));
 
-function fractionalKnapsack(W, items) {
-    items.sort((a, b) => b.ratio - a.ratio);
-
-    let totalValue = 0;
-
-    for (let i = 0; i < items.length; i++) {
-        if (items[i].weight <= W) {
-            W -= items[i].weight;
-            totalValue += items[i].value;
+for (let i = 0; i <= n; i++) {
+    for (let w = 0; w <= capacity; w++) {
+        if (i == 0 || w == 0) {
+            dp[i][w] = 0;
+        } else if (weights[i-1] <= w) {
+            dp[i][w] = Math.max(values[i-1] + dp[i-1][w - weights[i-1]], dp[i-1][w]);
         } else {
-            totalValue += items[i].value * (W / items[i].weight);
-            break;
+            dp[i][w] = dp[i-1][w];
         }
     }
-    console.log('Maximum Value in Knapsack = ' + totalValue.toFixed(2));
 }
 
-let items = [new Item(60, 10), new Item(100, 20), new Item(120, 30)];
-let W = 50;
-fractionalKnapsack(W, items);
-</code></pre>
+return dp[n][capacity];
+}
+
+let weights = [1, 2, 3, 8, 7, 4];
+let values = [20, 5, 10, 40, 15, 25];
+let capacity = 10;
+console.log(knapsack(weights, values, capacity));
+            </code></pre>
         </div>
     </div>
 
     <div id="cpp" class="code-container">
         <div class="code-box">
-            <h2>C++ Code
-                <button class="copy-btn" onclick="copyCode('cpp-code')">Copy Code</button>
-            </h2>
+            <h2>C++ Code <button class="copy-btn" onclick="copyCode('cpp-code')">Copy Code</button></h2>
             <pre><code id="cpp-code" class="language-cpp">
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
-
-struct Item {
-    int value;
-    int weight;
-    float ratio;
-};
-
-bool compare(Item a, Item b) {
-    return a.ratio > b.ratio;
-}
-
-void fractionalKnapsack(int W, vector<Item>& arr) {
-    sort(arr.begin(), arr.end(), compare);
-
-    float totalValue = 0.0;
-
-    for (int i = 0; i < arr.size(); i++) {
-        if (arr[i].weight <= W) {
-            W -= arr[i].weight;
-            totalValue += arr[i].value;
-        } else {
-            totalValue += arr[i].value * ((float)W / arr[i].weight);
-            break;
-        }
-    }
-    cout << "Maximum Value in Knapsack = " << totalValue << endl;
-}
-
-int main() {
-    vector<Item> arr = {{60, 10}, {100, 20}, {120, 30}};
-    int W = 50;
-    for (auto& item : arr) {
-        item.ratio = (float)item.value / item.weight;
-    }
-    fractionalKnapsack(W, arr);
-    return 0;
-}</code></pre>
+                // C++ program to solve fractional 
+                // Knapsack Problem 
+                #include <bits/stdc++.h> 
+                
+                using namespace std; 
+                
+                // Structure for an item which stores 
+                // weight & corresponding value of Item 
+                struct Item { 
+                    int value, weight; 
+                
+                    // Constructor 
+                    Item(int value, int weight) 
+                        : value(value), weight(weight) 
+                    { 
+                    } 
+                }; 
+                
+                // Comparison function to sort Item
+// according to val/weight ratio 
+                bool cmp(struct Item a, struct Item b) 
+                { 
+                    double r1 = (double)a.value / a.weight; 
+                    double r2 = (double)b.value / b.weight; 
+                    return r1 > r2; 
+                } 
+                
+                // Main greedy function to solve problem 
+                double fractionalKnapsack(struct Item arr[], 
+                                        int N, int size) 
+                { 
+                    // Sort Item on basis of ratio 
+                    sort(arr, arr + size, cmp); 
+                
+                    // Current weight in knapsack 
+                    int curWeight = 0; 
+                
+                    // Result (value in Knapsack) 
+                    double finalvalue = 0.0; 
+                
+                    // Looping through all Items 
+                    for (int i = 0; i < size; i++) { 
+                
+                        // If adding Item won't overflow, 
+                        // add it completely 
+                        if (curWeight + arr[i].weight <= N) { 
+                            curWeight += arr[i].weight; 
+                            finalvalue += arr[i].value; 
+                        } 
+                
+                        // If we can't add current Item, 
+                        // add fractional part of it 
+                        else { 
+                            int remain = N - curWeight; 
+                            finalvalue += arr[i].value 
+                                        * ((double)remain 
+                                            / arr[i].weight); 
+                
+                            break; 
+                        } 
+                    } 
+                
+                    // Returning final value 
+                    return finalvalue; 
+                } 
+                
+                // Driver Code 
+                int main() 
+                { 
+                    // Weight of knapsack 
+                    int N = 60; 
+                
+                    // Given weights and values as a pairs 
+                    Item arr[] = { { 100, 10 }, 
+                                { 280, 40 }, 
+                                { 120, 20 }, 
+                                { 120, 24 } }; 
+                
+                    int size = sizeof(arr) / sizeof(arr[0]); 
+                
+                    // Function Call 
+                    cout << "Maximum profit earned = "
+                        << fractionalKnapsack(arr, N, size); 
+                    return 0; 
+                }
+                
+            </code></pre>
         </div>
     </div>
+
 
     <div id="py" class="code-container">
         <div class="code-box">
-            <h2>Python Code
-                <button class="copy-btn" onclick="copyCode('py-code')">Copy Code</button>
-            </h2>
+            <h2>Python Code 
+            <button class="copy-btn" onclick="copyCode('py-code')">Copy Code</button></h2>
             <pre><code id="py-code" class="language-py">
-# Python implementation of Fractional Knapsack
-class Item:
-    def __init__(self, value, weight):
+                class Item:
+    def init(self, value, weight):
         self.value = value
         self.weight = weight
-        self.ratio = value / weight
+        self.ratio = value / weight  # Value-to-weight ratio
 
-def fractionalKnapsack(W, items):
+def fractional_knapsack(capacity, items):
+    # Sort items by value-to-weight ratio in descending order
     items.sort(key=lambda x: x.ratio, reverse=True)
-    
-    totalValue = 0
+
+    total_value = 0.0  # Total value accumulated in the knapsack
 
     for item in items:
-        if item.weight <= W:
-            W -= item.weight
-            totalValue += item.value
-        else:
-            totalValue += item.value * (W / item.weight)
+        if capacity <= 0:  # If the knapsack is full, break out of the loop
             break
-    
-    print(f"Maximum Value in Knapsack = {totalValue:.2f}")
 
-items = [Item(60, 10), Item(100, 20), Item(120, 30)]
-W = 50
-fractionalKnapsack(W, items)
-</code></pre>
+        if item.weight <= capacity:
+            # If the item can be fully added to the knapsack
+            total_value += item.value
+            capacity -= item.weight
+        else:
+            # If the item can't be fully added, take the fraction
+            total_value += item.ratio * capacity
+            capacity = 0  # The knapsack is now full
+
+    return total_value
+
+# Example usage
+if name == "main":
+    # Define the items (value, weight)
+    items = [Item(60, 10), Item(100, 20), Item(120, 30)]
+    capacity = 50  # Maximum weight capacity of the knapsack
+max_value = fractional_knapsack(capacity, items)
+    print(f"Maximum value in the knapsack: {max_value}")
+            </code></pre>
         </div>
     </div>
 
+</div>
+
+<script>
+    
+    function showCode(language) {
+        const containers = document.querySelectorAll('.code-container');
+        containers.forEach(function(container) {
+            container.style.display = 'none';
+        });
+        document.getElementById(language).style.display = 'block';
+    }
+
+    window.onload = function() {
+        showCode('c');
+    };
+
+    function copyCode(id) {
+        var codeElement = document.getElementById(id).textContent;
+        navigator.clipboard.writeText(codeElement).then(function() {
+            alert('Code copied to clipboard!');
+        }).catch(function(err) {
+            alert('Failed to copy code: ', err);
+        });
+    }
+</script>
+
     <footer>
         <ul class="footer-links">
-            <li><a href="https://www.github.com">GitHub</a></li>
-            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
-            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="#code">Code</a></li>
         </ul>
+        <p>&copy; 2024 Fractional Knapsack Problem. All rights reserved.</p>
     </footer>
 
-    <script>
-        function showCode(language) {
-            var codeContainers = document.querySelectorAll('.code-container');
-            for (var i = 0; i < codeContainers.length; i++) {
-                codeContainers[i].style.display = 'none';
-            }
-            document.getElementById(language).style.display = 'block';
-        }
-
-        function copyCode(id) {
-            var text = document.getElementById(id).textContent;
-            var textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            alert('Code copied to clipboard!');
-        }
-    </script>
-
-</body>
-
-</html>
+    </body>
+    </html>
