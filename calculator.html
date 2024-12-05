@@ -51,6 +51,7 @@
       margin: 0 30px;
       position: relative;
   }
+
   
   .nav-links a {
       text-decoration: none;
@@ -80,19 +81,24 @@
   .main {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap; 
+      
   }
-  
+
+  .s {
+    margin-left: 20px;
+    min-width: 500px;
+   width: 600px;
+  }
   .centered {
       margin: 20px; 
       position: relative; 
       border-radius: 8px;
       border: 2px solid blue;
-      padding: 10px;
+      padding : 30px;
       display: flex;
       flex-direction: column;
       flex: 1; 
-      min-width: 300px; 
+      max-width: 600px; 
   }
   .container h2{
     display: flex;
@@ -400,10 +406,10 @@ padding: 10px 20px;
       <p id="result"><b></b></p>
     </div>
   </div>
-<div class="split right" style="overflow:scroll; height:100%;">
+<div class="s">
     <div class="a">
       <h2><b>Let's solve the problem with the calculator</b></h2>
-      <center><p id="itemCount"><b><i>Number of items: 0</i></b></p></center>
+      <p id="itemCount"><b><i>Number of items: 0</i></b></p>
       <table id="resultTable">
         <thead>
           <tr>
@@ -442,10 +448,6 @@ padding: 10px 20px;
     </div>
     <img src="ss.jpg" alt="Image">
   </div>
-
-  
-
-
   <script src="script.js"></script>
   
 </body>
